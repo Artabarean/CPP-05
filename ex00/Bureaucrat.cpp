@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/11 12:29:09 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/11 14:09:58 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,9 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 	std::cout << "Copy assingnement operator called" << std::endl;
 	return (*this);
 }
+
+std::ostream Bureaucrat::operator<<(const Bureaucrat &other)
+{
+	
+}
+
