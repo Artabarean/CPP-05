@@ -1,41 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/11 11:39:57 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 11:38:54 by atabarea         ###   ########.fr       */
+/*   Created: 2026/05/12 11:34:19 by atabarea          #+#    #+#             */
+/*   Updated: 2026/05/12 11:37:41 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#pragma once
 
-int main(void)
+#include <iostream>
+#include <string>
+#include <exception>
+
+class Form
 {
-	try
-	{
-		Bureaucrat b1(150);
-		std::cout << b1;
-		b1.incrementGrade();
-		std::cout << b1;
-	}
-	catch (std::exception & ex)
-	{
-		std::cout << ex.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat b2(1);
-		std::cout << b2;
-		b2.decrementGrade();
-		std::cout << b2;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	public:
 	
-	return (0);
+	private:
+		const std::string	_name;
+		bool				_isSigned;
+		const int			_reqtosign;
+		const int			_reqtoexec;
 }
