@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:24:51 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 12:31:15 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/12 14:17:48 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 #include <iostream>
 #include <string>
 #include <exception>
+#include "Bureaucrat.hpp"
 
-class Form
+class Form : public Bureaucrat
 {
 	public:
 		Form(void);
 		Form(int);
 		Form(const Form&);
 		~Form(void);
+		int getReqtosign();
+		int getReqtoexec();
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();

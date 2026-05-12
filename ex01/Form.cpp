@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:34:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 12:30:52 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/12 14:20:50 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,33 +31,13 @@ Form::Form(int grade)
 }
 
 Form::Form(const Form& other)
-	:	_name(other._name)
+	: _reqtosign(), _reqtoexec(), _name(other.getName())
 {
 	*this = other;
 }
 
 Form::~Form(void)
 {
-}
-
-void	Form::incrementGrade(void)
-{
-	if ((this->_grade - 1) < 1)
-		throw GradeTooHighException();
-	else if ((this->_grade - 1) >= 1)
-	{
-		this->_grade -= 1;
-	}
-}
-
-void	Form::decrementGrade(void)
-{
-	if ((this->_grade + 1) > 150)
-		throw GradeTooLowException();
-	else if ((this->_grade + 1) <= 150)
-	{
-		this->_grade += 1;
-	}
 }
 
 const char*	Form::GradeTooHighException::what(void) const throw()
@@ -70,19 +50,19 @@ const char*	Form::GradeTooLowException::what(void) const throw()
 	return ("Grade too low");
 }
 
-int	Form::getGrade(void) const
+int	Form::getReqtosign(void)
 {
-	return (this->_grade);
+	return (this->_reqtosign);
 }
 
-std::string	Form::getName(void) const
+int	Form::getReqtoexec(void)
 {
-	return (this->_name);
+	return (this->_reqtoexec);
 }
 
 Form& Form::operator=(const Form &other)
 {
-	if (this->_grade != other._grade)
-		this->_grade = other._grade;
+	if (this->_isSigned != other._isSigned)
+		this->_isSigned = other._isSigned;
 	return (*this);
 }
