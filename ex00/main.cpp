@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 11:39:57 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 11:38:54 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/12 11:57:06 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,5 @@ int main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	
 	return (0);
 }
