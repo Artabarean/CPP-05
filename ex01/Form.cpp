@@ -13,21 +13,13 @@
 #include "Form.hpp"
 
 Form::Form(void)
-:	_name("Default"), _grade(150)
+:	_name("Default form"), _reqtosign(1), _reqtoexec(1)
 {
 }
 
 Form::Form(int grade)
-:	_name("Generic")
+:	_name("form"), _reqtosign(1), _reqtoexec(1)
 {
-	if (grade < 1)
-		throw GradeTooHighException();
-	else if (grade > 150)
-		throw GradeTooLowException();
-	else if (grade >= 1 && grade <= 150)
-	{
-		this->_grade = grade;
-	}
 }
 
 Form::Form(const Form& other)
@@ -60,9 +52,28 @@ int	Form::getReqtoexec(void)
 	return (this->_reqtoexec);
 }
 
+std::string Form::getName(void)const
+{
+	return (this->_name);
+}
+
+void Form::besigned(const Bureaucrat &other)
+{
+	if (other.getGrade() < this->_reqtosign)
+		throw GradeTooHighException();
+	else if(other.getGrade() > this->_reqtosign)
+		throw GradeTooLowException();
+}
+
 Form& Form::operator=(const Form &other)
 {
 	if (this->_isSigned != other._isSigned)
 		this->_isSigned = other._isSigned;
 	return (*this);
+}
+
+std::ostream& operator<<(std::ostream &os, const Form &other)
+{
+	os << other.getName() << std::endl;
+	return (os);
 }

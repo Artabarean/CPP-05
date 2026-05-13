@@ -15,8 +15,9 @@
 #include <string>
 #include <iostream>
 #include <exception>
+#include "Form.hpp"
 
-class Bureaucrat 
+class Bureaucrat
 {
 	public:
 		Bureaucrat(void);

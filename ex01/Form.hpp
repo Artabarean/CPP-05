@@ -17,15 +17,17 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
-class Form : public Bureaucrat
+class Form
 {
 	public:
 		Form(void);
 		Form(int);
 		Form(const Form&);
 		~Form(void);
-		int getReqtosign();
-		int getReqtoexec();
+		int			getReqtosign();
+		int			getReqtoexec();
+		std::string	getName()const;
+		void		besigned(const Bureaucrat&);
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
@@ -41,3 +43,5 @@ class Form : public Bureaucrat
 		const int			_reqtosign;
 		const int			_reqtoexec;
 };
+
+std::ostream& operator<<(std::ostream &os, const Form &);
