@@ -6,19 +6,19 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 11:28:09 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/14 12:24:34 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(void)
-:	_name("Default"), _grade(150)
+:	_name("Bureaucrat"), _grade(150)
 {
 }
 
 Bureaucrat::Bureaucrat(int grade)
-:	_name("Generic")
+:	_name("Bureaucrat")
 {
 	if (grade < 1)
 		throw GradeTooHighException();

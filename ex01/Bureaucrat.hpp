@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:17 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 11:16:35 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/14 11:46:31 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include "Form.hpp"
+
+class Form; // forward declaration
 
 class Bureaucrat
 {
@@ -28,6 +29,7 @@ class Bureaucrat
 		void		decrementGrade(void);
 		int			getGrade(void) const;
 		std::string	getName(void) const;
+		void	signForm(Form &f) const;
 		Bureaucrat& operator=(const Bureaucrat &);
 		class GradeTooHighException : public std::exception {
 			public:

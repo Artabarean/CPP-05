@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:24:51 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 14:17:48 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/14 11:46:20 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,29 @@
 #include <exception>
 #include "Bureaucrat.hpp"
 
+#pragma once
+
+#include <iostream>
+#include <string>
+#include <exception>
+
+class Bureaucrat; // forward declaration to avoid circular include
+
 class Form
 {
 	public:
 		Form(void);
-		Form(int);
+		Form(const std::string &name, int reqToSign, int reqToExec);
 		Form(const Form&);
 		~Form(void);
-		int			getReqtosign();
-		int			getReqtoexec();
-		std::string	getName()const;
-		void		besigned(const Bureaucrat&);
+
+		int            getReqtosign() const;
+		int            getReqtoexec() const;
+		std::string    getName() const;
+		bool           isSigned() const;
+
+		void        beSigned(const Bureaucrat&);
+
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
@@ -36,12 +48,13 @@ class Form
 			public:
 				const char * what() const throw();
 		};
+
 		Form& operator=(const Form&);
 	private:
-		const std::string	_name;
-		bool				_isSigned;
-		const int			_reqtosign;
-		const int			_reqtoexec;
+		const std::string    _name;
+		bool                _isSigned;
+		const int            _reqtosign;
+		const int            _reqtoexec;
 };
 
 std::ostream& operator<<(std::ostream &os, const Form &);

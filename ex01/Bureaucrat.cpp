@@ -6,19 +6,20 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 11:28:09 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/14 12:24:44 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 Bureaucrat::Bureaucrat(void)
-:	_name("Default"), _grade(150)
+:	_name("Bureaucrat"), _grade(150)
 {
 }
 
 Bureaucrat::Bureaucrat(int grade)
-:	_name("Generic")
+:	_name("Bureaucrat")
 {
 	if (grade < 1)
 		throw GradeTooHighException();
@@ -91,4 +92,17 @@ std::ostream& operator<<(std::ostream &os, const Bureaucrat &other)
 {
 	os << other.getName() << ", bureaucrat grade " << other.getGrade() << std::endl;
 	return (os);
+}
+
+void	Bureaucrat::signForm(Form &form) const
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << this->getName() << " signed " << form.getName() << std::endl;
+	}
+	catch (std::exception &ex)
+	{
+		std::cout << this->getName() << " couldn't sign " << form.getName() << " because " << ex.what() << std::endl;
+	}
 }
