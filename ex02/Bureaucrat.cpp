@@ -6,12 +6,12 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 12:49:28 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/14 12:33:48 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(void)
 :	_name("Bureaucrat"), _grade(150)
@@ -94,7 +94,7 @@ std::ostream& operator<<(std::ostream &os, const Bureaucrat &other)
 	return (os);
 }
 
-void	Bureaucrat::signForm(Form &form) const
+void	Bureaucrat::signForm(AForm &form) const
 {
 	try
 	{

@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:17 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 11:46:31 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/14 12:48:18 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <exception>
 
-class Form; // forward declaration
+class Form;
 
 class Bureaucrat
 {

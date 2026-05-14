@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 11:39:57 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 12:23:14 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/14 12:55:44 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,16 @@ int main(void)
 	std::cout << "---- Form signing tests ----" << std::endl;
 	try
 	{
-		Bureaucrat signer(45);
+		Bureaucrat signer(40);
 		Form f("Form", 45, 20);
 		std::cout << f << std::endl;
 		signer.signForm(f);
 		std::cout << f << std::endl;
+		Form f2("Form2", 50, 70);
 		Bureaucrat low(100);
-		low.signForm(f);
+		std::cout << f2 << std::endl;
+		low.signForm(f2);
+		std::cout << f2 << std::endl;
 	}
 	catch (std::exception &ex)
 	{

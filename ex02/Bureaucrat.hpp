@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/12 12:24:51 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 12:48:36 by atabarea         ###   ########.fr       */
+/*   Created: 2026/05/08 11:22:17 by atabarea          #+#    #+#             */
+/*   Updated: 2026/05/14 12:33:36 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <exception>
+#include "AForm.hpp"
 
-class Bureaucrat;
-
-class Form
+class Bureaucrat
 {
 	public:
-		Form(void);
-		Form(const std::string &name, int reqToSign, int reqToExec);
-		Form(const Form&);
-		~Form(void);
-
-		int            getReqtosign() const;
-		int            getReqtoexec() const;
-		std::string    getName() const;
-		bool           isSigned() const;
-
-		void        beSigned(const Bureaucrat&);
-
+		Bureaucrat(void);
+		Bureaucrat(int);
+		Bureaucrat(const Bureaucrat&);
+		~Bureaucrat(void);
+		void		incrementGrade(void);
+		void		decrementGrade(void);
+		int			getGrade(void) const;
+		std::string	getName(void) const;
+		void	signForm(AForm &f) const;
+		Bureaucrat& operator=(const Bureaucrat &);
 		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
@@ -41,13 +38,10 @@ class Form
 			public:
 				const char * what() const throw();
 		};
-
-		Form& operator=(const Form&);
+	
 	private:
-		const std::string    _name;
-		bool                _isSigned;
-		const int            _reqtosign;
-		const int            _reqtoexec;
+		const std::string 	_name;
+		int					_grade;
 };
 
-std::ostream& operator<<(std::ostream &os, const Form &);
+std::ostream& operator<<(std::ostream &os, const Bureaucrat &);
