@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 12:33:48 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:54:35 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,14 @@ int	Bureaucrat::getGrade(void) const
 std::string	Bureaucrat::getName(void) const
 {
 	return (this->_name);
+}
+
+void	Bureaucrat::executeForm(AForm const & form) const
+{
+	if (form.execute(*this) == true)
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	else
+		std::cout << this->_name << " could not execute " << form.getName() << std::endl;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)

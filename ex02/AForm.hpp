@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:24:51 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 12:32:07 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:55:35 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ class AForm
 		AForm(void);
 		AForm(const std::string &name, int reqToSign, int reqToExec);
 		AForm(const AForm&);
-		~AForm(void);
+		virtual ~AForm(void);
 
-		int            getReqtosign() const;
-		int            getReqtoexec() const;
-		std::string    getName() const;
-		bool           isSigned() const;
+		virtual bool	execute(Bureaucrat const & executor) const = 0;
+		int            	getReqtosign() const;
+		int            	getReqtoexec() const;
+		std::string    	getName() const;
+		bool           	isSigned() const;
+		
 
 		void        beSigned(const Bureaucrat&);
 

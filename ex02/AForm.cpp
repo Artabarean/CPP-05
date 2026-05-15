@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:34:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 12:32:30 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:44:45 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,15 @@ void AForm::beSigned(const Bureaucrat &other)
 		this->_isSigned = true;
 	else
 		throw GradeTooLowException();
+}
+
+bool AForm::execute(Bureaucrat const & executor) const
+{
+	if (this->_isSigned == true && executor.getGrade() <= this->_reqtoexec)
+		return (true);
+	else
+		throw GradeTooLowException();
+	return (false);
 }
 
 AForm& AForm::operator=(const AForm &other)

@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:17 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/14 12:33:36 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/15 11:47:45 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ class Bureaucrat
 		void		decrementGrade(void);
 		int			getGrade(void) const;
 		std::string	getName(void) const;
-		void	signForm(AForm &f) const;
+		void		signForm(AForm &f) const;
+		void		executeForm(AForm const & form) const;
 		Bureaucrat& operator=(const Bureaucrat &);
 		class GradeTooHighException : public std::exception {
 			public:
