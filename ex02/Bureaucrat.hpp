@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 11:22:17 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/15 11:47:45 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:12:50 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 #include <string>
 #include <iostream>
 #include <exception>
-#include "AForm.hpp"
+
+class AForm;
 
 class Bureaucrat
 {
