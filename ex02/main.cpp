@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 12:28:46 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/18 12:40:58 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/18 12:55:07 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,15 +45,15 @@ int main(void)
 	try
 	{
 		Bureaucrat signer(40);
-		AForm *f = new PresidentialPardonForm("Form", 45, 20);
-		std::cout << *f << std::endl;
-		signer.signForm(*f);
-		std::cout << *f << std::endl;
-		AForm *f2 = new PresidentialPardonForm("Form2", 50, 70);
+		PresidentialPardonForm f("Form", 45, 20) ;
+		std::cout << f << std::endl;
+		signer.signForm(f);
+		std::cout << f << std::endl;
+		PresidentialPardonForm f2("Form2", 50, 70);
 		Bureaucrat low(100);
-		std::cout << *f2 << std::endl;
-		low.signForm(*f2);
-		std::cout << *f2 << std::endl;
+		std::cout << f2 << std::endl;
+		low.signForm(f2);
+		std::cout << f2 << std::endl;
 	}
 	catch (std::exception &ex)
 	{
