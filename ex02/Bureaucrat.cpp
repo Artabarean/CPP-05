@@ -83,10 +83,15 @@ std::string	Bureaucrat::getName(void) const
 
 void	Bureaucrat::executeForm(AForm const & form) const
 {
-	if (form.execute(*this) == true)
+	try
+	{
+		form.execute(*this);
 		std::cout << this->_name << " executed " << form.getName() << std::endl;
-	else
-		std::cout << this->_name << " could not execute " << form.getName() << std::endl;
+	}
+	catch (const std::exception &ex)
+	{
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because " << ex.what() << std::endl;
+	}
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)

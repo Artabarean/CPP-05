@@ -10,14 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "AForm.hpp"
 
 class PresidentialPardonForm : public AForm
 {
 	public:
-		PresidentialPardonForm(const std::string &name, int reqToSign, int reqToExec);
+		PresidentialPardonForm(const std::string &target);
 		PresidentialPardonForm(const PresidentialPardonForm &);
 		~PresidentialPardonForm(void);
-		bool execute(Bureaucrat const & executor) const;
+		void executeAction(void) const;
 		PresidentialPardonForm &operator=(const PresidentialPardonForm &other);
+
+	private:
+		const std::string _target;
 };

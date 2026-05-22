@@ -15,13 +15,6 @@
 #include <iostream>
 #include <string>
 #include <exception>
-#include "Bureaucrat.hpp"
-
-#pragma once
-
-#include <iostream>
-#include <string>
-#include <exception>
 
 class Bureaucrat; // forward declaration to avoid circular include
 
@@ -33,7 +26,8 @@ class AForm
 		AForm(const AForm&);
 		virtual ~AForm(void);
 
-		virtual bool	execute(Bureaucrat const & executor) const = 0;
+		void		execute(Bureaucrat const & executor) const;
+		virtual void	executeAction(void) const = 0;
 		int            	getReqtosign() const;
 		int            	getReqtoexec() const;
 		std::string    	getName() const;
@@ -47,6 +41,10 @@ class AForm
 				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception {
+			public:
+				const char * what() const throw();
+		};
+		class FormNotSignedException : public std::exception {
 			public:
 				const char * what() const throw();
 		};

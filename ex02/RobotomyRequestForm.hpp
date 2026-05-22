@@ -10,10 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "AForm.hpp"
 
 class RobotomyRequestForm : public AForm
 {
 	public:
-		bool execute(Bureaucrat const & executor) const;	
+		RobotomyRequestForm(const std::string &target);
+		RobotomyRequestForm(const RobotomyRequestForm &);
+		~RobotomyRequestForm(void);
+		void executeAction(void) const;
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &other);
+
+	private:
+		const std::string _target;
 };

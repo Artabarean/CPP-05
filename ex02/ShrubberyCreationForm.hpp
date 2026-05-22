@@ -10,10 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
+
 #include "AForm.hpp"
 
 class ShrubberyCreationForm : public AForm
 {
 	public:
-		bool execute(Bureaucrat const & executor) const;	
+		ShrubberyCreationForm(const std::string &target);
+		ShrubberyCreationForm(const ShrubberyCreationForm &);
+		~ShrubberyCreationForm(void);
+		void executeAction(void) const;
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &other);
+
+	private:
+		const std::string _target;
 };

@@ -16,8 +16,13 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
+#include <cstdlib>
+#include <ctime>
+
 int main(void)
 {
+	std::srand(static_cast<unsigned int>(std::time(NULL)));
+
 	try
 	{
 		Bureaucrat b1(150);
@@ -45,15 +50,33 @@ int main(void)
 	try
 	{
 		Bureaucrat signer(40);
-		PresidentialPardonForm f("Form", 45, 20) ;
+		PresidentialPardonForm f("home") ;
 		std::cout << f << std::endl;
 		signer.signForm(f);
 		std::cout << f << std::endl;
-		PresidentialPardonForm f2("Form2", 50, 70);
+		signer.executeForm(f);
+
+		Bureaucrat boss(1);
+		PresidentialPardonForm f_success("home-office");
+		boss.signForm(f_success);
+		boss.executeForm(f_success);
+
 		Bureaucrat low(100);
+		RobotomyRequestForm f2("marvin");
 		std::cout << f2 << std::endl;
 		low.signForm(f2);
 		std::cout << f2 << std::endl;
+		low.executeForm(f2);
+
+		Bureaucrat robot(1);
+		RobotomyRequestForm f3("marvin");
+		robot.signForm(f3);
+		robot.executeForm(f3);
+
+		ShrubberyCreationForm f4("garden");
+		Bureaucrat gardener(1);
+		gardener.signForm(f4);
+		gardener.executeForm(f4);
 	}
 	catch (std::exception &ex)
 	{
