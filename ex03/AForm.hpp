@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 12:24:51 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/15 11:55:35 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/26 11:25:59 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 #include <iostream>
 #include <string>
 #include <exception>
+
+typedef enum
+{
+	SHRUBBERY,
+	PRESIDENTIAL,
+	ROBOTOMY,
+	FORM_COUNT
+}	Form_Type;
 
 class Bureaucrat; // forward declaration to avoid circular include
 

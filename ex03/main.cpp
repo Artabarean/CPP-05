@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/14 12:28:46 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/18 12:55:07 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/26 12:51:03 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "Intern.hpp"
 
 #include <cstdlib>
 #include <ctime>
@@ -23,30 +24,6 @@ int main(void)
 {
 	std::srand(static_cast<unsigned int>(std::time(NULL)));
 
-	try
-	{
-		Bureaucrat b1(150);
-		std::cout << b1;
-		b1.incrementGrade();
-		std::cout << b1;
-	}
-	catch (std::exception & ex)
-	{
-		std::cout << ex.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat b2(1);
-		std::cout << b2;
-		b2.decrementGrade();
-		std::cout << b2;
-	}
-	catch(const std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	
-	std::cout << "---- Form signing tests ----" << std::endl;
 	try
 	{
 		Bureaucrat signer(40);
@@ -82,6 +59,9 @@ int main(void)
 	{
 		std::cout << "Exception: " << ex.what() << std::endl;
 	}
-
+	Intern someRandomIntern;
+	AForm* rrf;
+	rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+	delete (rrf);
 	return (0);
 }
