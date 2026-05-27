@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/12 11:34:19 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/15 11:44:45 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/27 14:14:31 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ AForm& AForm::operator=(const AForm &other)
 {
 	if (this != &other)
 	{
-		// only _isSigned can be assigned, the other members are const
 		this->_isSigned = other._isSigned;
 	}
 	return (*this);

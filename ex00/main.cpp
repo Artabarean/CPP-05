@@ -6,7 +6,7 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 11:39:57 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/12 11:57:06 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/27 11:31:17 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int main(void)
 		Bureaucrat b1(150);
 		std::cout << b1;
 		b1.incrementGrade();
+		std::cout << b1;
+		b1.decrementGrade();
+		std::cout << b1;
+		b1.decrementGrade();
 		std::cout << b1;
 	}
 	catch (std::exception & ex)

@@ -6,12 +6,11 @@
 /*   By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/15 11:56:52 by atabarea          #+#    #+#             */
-/*   Updated: 2026/05/18 11:18:39 by atabarea         ###   ########.fr       */
+/*   Updated: 2026/05/27 14:11:35 by atabarea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-
 #include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
@@ -36,7 +35,7 @@ void ShrubberyCreationForm::executeAction(void) const
 	out << "       ccee88oo" << std::endl;
 	out << "   C8O8O8Q8PoOb o8oo" << std::endl;
 	out << "  dOB69QO8PdUOpugoO9bD" << std::endl;
-	out << " CgggbU8OU qOp qOdoUOdcb" << std::endl;
+	out << " CjjjbU8OU qOp qOdoUOdcb" << std::endl;
 	out << "    6OuU  /p u gcoUodpP" << std::endl;
 	out << "      \\////\\\\" << std::endl;
 	out << "          ||" << std::endl;

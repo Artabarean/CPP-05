@@ -6,11 +6,11 @@
 #    By: atabarea <atabarea@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/14 12:28:42 by atabarea          #+#    #+#              #
-#    Updated: 2026/05/18 12:13:00 by atabarea         ###   ########.fr        #
+#    Updated: 2026/05/27 11:26:46 by atabarea         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Forms
+NAME		= MoreForms
 CXX			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
